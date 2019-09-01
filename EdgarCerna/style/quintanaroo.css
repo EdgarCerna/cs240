@@ -1,0 +1,29 @@
+body {
+    background-image: url(../images/cancun-skyline.JPG);
+    background-size: cover;
+    padding: 10px;
+}
+h1, h2 {
+    margin: 0px;
+    background-color: grey;
+    padding: 10px;
+    text-align: center;
+}
+p {
+    background-color: lightyellow;
+    background-size: 100% auto;
+    padding: 0px 20px;
+    text-align: justify; 
+    font-size: 20px;
+}
+.about {
+    background-color: lightyellow;
+    background-size: 100% auto;
+    padding: 0px 20px;
+}
+.about figure {
+    float: left;
+    text-align: center;
+    border: 1px solid black;
+    margin: 5px 10px 10px 0px;
+}
