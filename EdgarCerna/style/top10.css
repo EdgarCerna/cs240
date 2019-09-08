@@ -1,0 +1,51 @@
+body {
+    background-color: blanchedalmond;
+}
+h1, h2 {
+    text-align: center;
+    background-color: gray;
+}
+table {
+    border-collapse: collapse;
+    width: 100%;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+th, td {
+    border: thin solid;
+    padding: 2px 5px;
+    text-align: center;
+}
+tr:nth-child(even) {
+    background-color: #dddddd;
+}
+.center {
+    display: flex;
+    justify-content: center;
+}
+.row {
+    display: table-row;
+    background-color: #dddddd;
+}
+.cell {
+    display: table-cell;
+    width: 40%;
+    padding: 0px 20px;
+    text-align: justify;
+}
+nav ul {
+    list-style-type: none;
+    text-align: center;
+    padding-left: 0px;
+}
+nav li {
+    display: inline-block;
+    padding: 0px 4px 2px 4px;
+    margin: 2px 4px 2px 4px;
+    background-color: #dddddd;
+    border: outset;
+    border-color: khaki;
+}
+nav a {
+    text-decoration: none;
+}
