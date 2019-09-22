@@ -1,0 +1,21 @@
+body {
+    background-color: lightskyblue;
+}
+h2 {
+    background-color: grey;
+}
+p {
+    background-color: lightgrey;
+    font-size: 20px;
+}
+body {
+    text-align: center;
+    min-width: 500px;
+}
+form, input:last-child {
+    margin: 10px 20px
+}
+.center {
+    margin: 10px 0;
+    display: flex; justify-content: center;
+}
