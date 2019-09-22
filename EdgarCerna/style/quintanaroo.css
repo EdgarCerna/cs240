@@ -25,7 +25,6 @@ p {
     float: left;
     text-align: center;
     border: 1px solid black;
-    margin: 5px 10px 10px 0px;
 }
 nav ul {
     list-style-type: none;
@@ -42,4 +41,35 @@ nav li {
 }
 nav a {
     text-decoration: none;
+}
+#figure {
+    position: relative;
+    height: 610px;
+}
+#quintanaRooMap {
+    position: absolute;
+    top: 0px; left: 0px;
+    width: auto;
+    border: 1px solid black;
+}
+iframe {
+    position: absolute;
+    top: 0px; left: 370px;
+    height: 500px;
+    width: 600px;
+    margin: 0px 5px;
+    margin-left: 150px;
+}
+.infoCap {
+    position: absolute;
+    top: 610px;
+    width: 1000px;
+    font-size: small;
+    background-color: lightyellow;
+    margin-bottom: 10px;
+}
+div {
+    width: 360px;
+    padding: 0px 10px;
+    display: table-cell;
 }
