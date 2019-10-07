@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="author" content="Edgar Cerna">
+    <title>Belize Cruise Package Calculator</title>
+    <link rel="stylesheet" href="../style/belize-cruise.css">
+    <script>
+        var form;               // html element
+        var totalPrice;
+
+        // This function invoked by user click on Calculate button
+        function calc(dataForm) {
+            var table;
+            var row;
+            var monthIndex;
+
+            table = document.getElementById('cruiseInfo');
+            row = table.insertRow(table.rows.length);
+            form = dataForm;
+            computeData();
+            row.insertCell(0).innerHTML = form.elements['adults'].value;
+            row.insertCell(1).innerHTML = form.elements['children'].value;
+            row.insertCell(2).innerHTML = form.elements['numDays'].value;
+
+            monthIndex = form.elements['months'].selectedIndex;
+
+            row.insertCell(3).innerHTML = 
+                document.getElementsByTagName('option')[monthIndex].innerHTML;
+
+            row.insertCell(4).innerHTML = totalPrice;
+        }
+
+        function computeData() {
+            var adults;
+            var children;
+            var month;
+
+            const ADULT_PRICE = 100;
+            const CHILD_PRICE = 65;
+
+            var basePrice;
+
+            adults = form.elements['adults'].value;
+            children = form.elements['children'].value;
+            month = form.elements['months'].selectedIndex + 1;
+
+            basePrice =  (adults * ADULT_PRICE) + (children * CHILD_PRICE);
+            console.log('Base Price', basePrice);
+
+            totalPrice = calcMonthDiff(basePrice, month);
+            console.log('Total price', totalPrice);
+        }
+
+        function calcMonthDiff(basePrice, month) {
+            if (month >= 3 && month <= 7) {
+                basePrice *= 1.6;
+            }
+            return basePrice;
+        }
+    </script>
+    <script src="navigation.js"></script>
+</head>
+
+<body onload="createHeaderFooter();">
+    <h2>Belize Cruise Package Calculator</h2>
+    <form>
+        Number of Adults:
+        <input id="adults" type="text" size="5" value="2">
+        Number of Children:
+        <input id="children" type="text" size="5" value="3"><br>
+        <label for="numDays">How many days do you plan to stay?:</label>
+        <input id="numDays" type="text" size="5" value="5"><br>
+        <label for="months">Month:</label>
+        <select id="months" name="months" multiple>
+            <option>Jan</option> <option>Feb</option> <option>Mar</option>
+            <option>Apr</option> <option>May</option> <option>Jun</option>
+            <option>Jul</option> <option>Aug</option> <option>Sep</option>
+            <option>Oct</option> <option>Nov</option> <option>Dec</option>
+        </select>
+        <input type="button" value="Calculate" onclick="calc(this.form)">
+    </form>
+    <h2>Calculation Results:</h2>
+    <div class="center">
+        <table id="cruiseInfo">
+            <tr>
+                <th># of Adults &nbsp;</th>
+                <th># of Children &nbsp;</th>
+                <th># of Days &nbsp;</th>
+                <th>Month &nbsp;</th>
+                <th>Estimate Total Cost</th>
+            </tr>
+        </table>
+    </div>
+    <h2>Welcome & Instructions:</h2>
+    <p>
+        Welcome to the Belize Cruise Package Calculator! In this applciation you 
+        can see what you should expect to pay when booking one of our cruises.
+    </p>
+    <p>
+        Begin by entering the number of Adults, Children, and days you plan to stay. 
+        From there select the month you would like to attend during. (Keep in mind 
+        our busiest time of year is the Spring so there will be an upchare durring 
+        those months March - July)
+</body>
+</html>
